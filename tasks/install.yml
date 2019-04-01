@@ -1,0 +1,15 @@
+---
+- name: create /opt/elastichoney
+  file: path=/opt/elastichoney state=directory mode=0755
+
+- name: create /etc/elastichoney
+  file: path=/etc/elastichoney state=directory mode=0755
+
+- name: create /var/log/elastichoney
+  file: path=/var/log/elastichoney state=directory mode=0755
+
+- name: install elastichoney
+  copy:
+    src: files/elastichoney_0.0.1
+    dest: /opt/elastichoney/elastichoney_0.0.1
+    mode: a+x

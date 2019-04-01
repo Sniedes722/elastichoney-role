@@ -1,0 +1,16 @@
+
+[Unit]
+Description=Elastichoney honeypot
+Documentation=https://github.com/jordan-wright/elastichoney
+Requires=network.target remote-fs.target elastichoney.service
+After=network.target remote-fs.target elastichoney.service
+PartOf=elastichoney.service
+
+[Service]
+Type=simple
+User=root
+Group=root
+ExecStart=/opt/elastichoney/elastichoney_0.0.1 --config='/etc/elastichoney/config.json'
+
+[Install]
+WantedBy=multi-user.target

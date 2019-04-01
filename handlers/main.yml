@@ -1,0 +1,10 @@
+---
+- name: reload systemd
+  service:
+    daemon_reload: yes
+
+- name: restart elastichoney
+  service:
+    name: elastichoney
+    state: restarted
+    enabled: yes
