@@ -1,0 +1,8 @@
+---
+- name: template service config
+  template:
+    src: templates/elastichoney.service.j2
+    dest: /etc/systemd/system/elastichoney.service
+  notify:
+  - "reload systemd"
+  - "restart elastichoney"
